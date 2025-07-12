@@ -28,5 +28,27 @@ Next once the timing report is generated, now use script to parse and have pre-c
 There can be limits so it doesn't go into a lot of optimization or longer duration. 
 
 
+## Top Level Analysis
+
+Based on the Report like : In below we observe the cell name followed by pin :
+ 
+- Count the No. of Inverter or Buffer present in the Clock path : Top Analysis Easy feedback. (It's just Regular Expression script can be written in Python)
+  - count inverter cells
+  - count buffer cells.
+  - Segregate based on the strength of the cells. 
+
+Consider this as one top level of giving feedback on the clock paths. Like In general Replace the long cells of Buffer with few Inverter cells.
+If the degradation is more in any path then add a buffer in between the inverter path. Not changing the logic. Retain the logic. 
+
+<img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/fd996f07-fab5-4969-8870-1b9dd4faa2c3" />
+
+## Script 
+
+The script is attached in this GitHub. The Method flow is simple :
+- STEP1 : Feed one Timing Report.
+- STEP2 : In Log File we can see the Number of Inverter Cells, Buffer Cells and with respect to their strength.
+- STEP3 : In the Excel File for each path we can see the count written. 
+
+
 
 
