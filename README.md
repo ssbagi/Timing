@@ -8,10 +8,25 @@ Google provides the Image datasets, Classifier and Pre-built trained models read
 So, similarly Synopysys, Cadence, MG and third parties can also provide the data. Even the Foundries give the Standard Cell Transition, delays, caps in Table format. 
 The table formats like Interpolation and  Extrapolation concepts are used for predicting or calculating the delays. We did basic calculations in college as part of coursework. 
 
+In general the table is like this :
+
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/45a68006-88be-4baf-beb1-4cfe94d649a1" />
+
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/21dfe5ca-018d-4bd3-9dbc-95bc246df43a" />
+
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/7574f580-3827-4c64-be73-7ee0bdba7484" />
+
+For doing STA analysis we generally use the concept of Multi Mode and Multi Corner (MMMC). In our case we have
+- skylane130_fd_sc_hd__typical.lib : skylane130_fd_sc_hd__tt_025C_1v80.
+- skylane130_fd_sc_hd__slow.lib : skylane130_fd_sc_hd__ss_100C_1v60
+- skylane130_fd_sc_hd__fast.lib : skylane130_fd_sc_hd__ff_n40C_1v95
+
+The dataset creation can be like this :
+The way we calculate delay is based on the above table format shown in images. Similiarly we can extrapolate or interploate the same calculation below also. 
 - INV - INV   : The distance can be 5units, 10 units, 15units ......... 200 ....... 500units. So, Measure the tr, tf, td, cap, diving strength.
-- INV - BUF  :
-- BUF - BUF :
-- NOT - NOT :
+- INV - BUF   : The distance can be 5units, 10 units, 15units ......... 200 ....... 500units. So, Measure the tr, tf, td, cap, diving strength.
+- BUF - BUF   : The distance can be 5units, 10 units, 15units ......... 200 ....... 500units. So, Measure the tr, tf, td, cap, diving strength.
+- NOT - NOT   : The distance can be 5units, 10 units, 15units ......... 200 ....... 500units. So, Measure the tr, tf, td, cap, diving strength.
 
 - Like this for all combinations of the logic gates. Like different test cases scenarios like how we verify various scenarios.  
 
@@ -29,7 +44,8 @@ Similarly now for Flip-Flops :
 ## Top Level Analysis (LEVEL 0 DEBUG)
 
 Level 0 : Debug Analysis.
-Instead of reading 1000 of clk path reports and stuff. SOmetimes the clk path may be same for many paths like at the end like 10 or 20 levels may change. So, there is a pattern in the path also. In the Source/Image section we observe similar stuff. 
+- In the Source/Image section we observe similar stuff. The Paths might have few levels as similar cells present in the path like kind of root path. 
+- The clk path may be same for many paths like at the end like 10 or 20 levels may change. If we optimize the root path cells then multiple paths are already optimized further.
 
 Based on the Report like : In below we observe the cell name followed by pin :
  
@@ -126,13 +142,16 @@ HVT  :  High Threshold Voltage Cell    |   Less leakage.    |  High delay.
 NVT  :  Normal Threshold Voltage Cell  |   Normal.        |  Normal delay.
 LVT  :  Low Threshold Voltage Cell     |   More leakage.  |  Less delay.
 
-**Takeaway Point** : 
+**Takeaway Point** :
+
 - If the number of LVT are more we can check the no. of cells present in the path and count the LVT type of cells and say it maybe have more leakage power. If we want to reduce low leakage replace few of the cells with HVT cells and vice-versa.
 - If the path is having non-clock cells we need to reomve them and make everything to clk cells only. 
 
-So, in way on top level we come to know the exact scenarios where which path we can optimize you know instead of openeing all the 1000's of report tweaking the stuff like that. 
-We can go in specific path or report and do the changes like provoide the feedback and stuff. 
-This is just a Heuristic Algorithm.
+# Conclusion 
+- A Heuristic Algorithm kind of Level 0 Debug Analysis. 
+- In way on top level we come to know the exact scenarios where which path we can optimize the paths. 
+- Few Paths might have few levels as similar like kind of root path. If we optimize these cells then multiple paths are already optimized further. We can go in specific path or report and do the changes like provide the feedback and stuff. 
+
 
 
 
