@@ -26,7 +26,7 @@ Similarly now for Flip-Flops :
 - If we can set limits so it doesn't go into a lot of optimization or longer duration. Ya with few Heuristics this can be done. Yes its possible.  
 
 
-## Top Level Analysis
+## Top Level Analysis (LEVEL 0 DEBUG)
 
 Level 0 : Debug Analysis.
 Instead of reading 1000 of clk path reports and stuff. SOmetimes the clk path may be same for many paths like at the end like 10 or 20 levels may change. So, there is a pattern in the path also. In the Source/Image section we observe similar stuff. 
