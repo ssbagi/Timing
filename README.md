@@ -28,7 +28,8 @@ Similarly now for Flip-Flops :
 
 ## Top Level Analysis
 
-Level 0 : Debug.
+Level 0 : Debug Analysis.
+Instead of reading 1000 of clk path reports and stuff. SOmetimes the clk path may be same for many paths like at the end like 10 or 20 levels may change. So, there is a pattern in the path also. In the Source/Image section we observe similar stuff. 
 
 Based on the Report like : In below we observe the cell name followed by pin :
  
@@ -49,15 +50,25 @@ The script is attached in this GitHub. The Method flow is simple :
 - STEP2 : In Log File we can see the Number of Inverter Cells, Buffer Cells and with respect to their strength.
 - STEP3 : In the Excel File for each path we can see the count written. 
 
-
 Level 0 Debug : Initial top level analysis. 
 
 The Method is like this : In general Synopsys or Any timing report will be like this.
 
-Source : https://anysilicon.com/clock-tree-synthesis/
+Source : 
+- https://anysilicon.com/clock-tree-synthesis/
+- https://vlsiuniverse.blogspot.com/2017/12/what-is-difference-between-normal.html 
 
 Image : 
 
+![clock-tree-overview1_jpg](https://github.com/user-attachments/assets/149e2c10-1a34-4fc0-8f50-a06e39848d16)
+
+![clock-tree-overview8_jpg](https://github.com/user-attachments/assets/b5f3ec48-1208-4e52-93bd-d884e3cdf128)
+
+Takeaway Points :
+- In above paths we see the Clock path (PLL to the Clk pin of the FF's there are many levels) we can count the number of Clock Cells and Non Clock Cells present in the clock path.
+- Need of Clk cells in the clock path. (Link : https://vlsiuniverse.blogspot.com/2017/12/what-is-difference-between-normal.html)
+- We can set a threshold like cell count to be 50 if something crossing we need to reduce or less increase. We can keep +/- 10% count varaition also.
+- The above can vary w.r.t to tech node, the Floorplan, Placement changes and stuff. 
 
 Timing Report : Example one Report like this asshown below 
 
@@ -69,6 +80,8 @@ Cell Name tr tf cap delay
 The script anlaogy is simple :
 
 STEP1 : The cellname will be generally like this 
+
+Non CLK Cell List :
 
 Cell_Path(Hierarchical_path)/.*_inv_4_/IN
 Cell_Path(Hierarchical_path)/.*_inv_4_/OUT
@@ -82,18 +95,40 @@ Cell_Path(Hierarchical_path)/.*_buff_4_/OUT
 Cell_Path(Hierarchical_path)/.*_buff_8_/IN
 Cell_Path(Hierarchical_path)/.*_buff_8_/OUT
 
+CLK Cell List :
+
+Cell_Path(Hierarchical_path)/.*_clk_inv_4_/IN
+Cell_Path(Hierarchical_path)/.*_clk_inv_4_/OUT
+
+Cell_Path(Hierarchical_path)/.*_clk_inv_8_/IN
+Cell_Path(Hierarchical_path)/.*_clk_inv_8_/OUT
+
+Cell_Path(Hierarchical_path)/.*_clk_buff_4_/IN
+Cell_Path(Hierarchical_path)/.*_clk_buff_4_/OUT
+
+Cell_Path(Hierarchical_path)/.*_clk_buff_8_/IN
+Cell_Path(Hierarchical_path)/.*_clk_buff_8_/OUT
+
 So above we can see the logic or pattern is simple like The names are differing from line to line but if consecutive match and only change in the pin names count the numbers. In Excel we can segerate it as :
 
-PATH_DETAILS  INV INV2  INV4  INV8  INV16  BUFF BUFF2  BUFF4  BUFF8  BUFF16
-PATH1         5    2    -     -     2      -    2      4      1      2  
-PATH2         5    2    -     -     2      -    2      4      1      2 
-PATH3         5    2    -     -     2      -    2      4      1      2 
+## Path Details
 
+| PATH_DETAILS | INV | INV2 | INV4 | INV8 | INV16  | BUFF | BUFF2  | BUFF4  | BUFF8  | BUFF16 | CLK CELLS | Non CLK CELLS |TOTAL |
+|--------------|-----|------|------|------|--------|------|--------|--------|--------|--------|-----------|---------------|------|
+| PATH1        | 5   | 2    | -    | -    | 2      | -    | 2      | 4      | 1      | 2      | 13        |      12       |  25  |
+| PATH2        | 5   | 2    | -    | -    | 2      | -    | 2      | 4      | 1      | 2      | 12        |      13       |  25  |
+| PATH3        | 5   | 2    | -    | -    | 2      | -    | 2      | 4      | 1      | 2      | 10        |      15       |  25  |
+
+Based on the cell name present we can even segregate the cells based on the threshold types also.
 In way if we want to make it like reduce power then cahnge the type of the cell to HVT type. 
 
 HVT  :  High Threshold Voltage Cell    |   Less leakage.    |  High delay.
 NVT  :  Normal Threshold Voltage Cell  |   Normal.        |  Normal delay.
 LVT  :  Low Threshold Voltage Cell     |   More leakage.  |  Less delay.
+
+**Takeaway Point** : 
+- If the number of LVT are more we can check the no. of cells present in the path and count the LVT type of cells and say it maybe have more leakage power. If we want to reduce low leakage replace few of the cells with HVT cells and vice-versa.
+- If the path is having non-clock cells we need to reomve them and make everything to clk cells only. 
 
 So, in way on top level we come to know the exact scenarios where which path we can optimize you know instead of openeing all the 1000's of report tweaking the stuff like that. 
 We can go in specific path or report and do the changes like provoide the feedback and stuff. 
