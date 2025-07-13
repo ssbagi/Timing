@@ -28,6 +28,8 @@ Similarly now for Flip-Flops :
 
 ## Top Level Analysis
 
+Level 0 : Debug.
+
 Based on the Report like : In below we observe the cell name followed by pin :
  
 - Count the No. of Inverter or Buffer present in the Clock path : Top Analysis Easy feedback. (It's just Regular Expression script can be written in Python)
