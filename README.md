@@ -41,7 +41,7 @@ Similarly now for Flip-Flops :
 - If we can set limits so it doesn't go into a lot of optimization or longer duration. Ya with few Heuristics this can be done. Yes its possible.  
 
 
-## Tool
+## Tool : Infinisim 
 My Master Thesis was on Duty Cycle Distorition for the Clock paths. The Rail to Rail Failure and Duty Cycle Distortion have explained in my report. As part of the feedback/fixes giving so based on the experiment carried out the following analysis was araised. As part of the simulation we used Infinisim. Link : https://infinisim.com/. The Infinisim also provides Webinars How the tool helps in detecting the R2R and DCD on CLock paths and Even they have Jitter analysis also. 
 
 ## Top Level Analysis (LEVEL 0 DEBUG)
