@@ -141,9 +141,9 @@ So above we can see the logic or pattern is simple like The names are differing 
 Based on the cell name present we can even segregate the cells based on the threshold types also.
 In way if we want to make it like reduce power then cahnge the type of the cell to HVT type. 
 
-HVT  :  High Threshold Voltage Cell    |   Less leakage.    |  High delay.
-NVT  :  Normal Threshold Voltage Cell  |   Normal.          |  Normal delay.
-LVT  :  Low Threshold Voltage Cell     |   More leakage.    |  Less delay.
+- HVT  :  High Threshold Voltage Cell    |   Less leakage.    |  High delay.
+- NVT  :  Normal Threshold Voltage Cell  |   Normal.          |  Normal delay.
+- LVT  :  Low Threshold Voltage Cell     |   More leakage.    |  Less delay.
 
 **Takeaway Point** :
 - If the number of LVT are more we can check the no. of cells present in the path and count the LVT type of cells and say it maybe have more leakage power. If we want to reduce low leakage replace few of the cells with HVT cells and vice-versa.
