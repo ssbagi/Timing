@@ -41,6 +41,9 @@ Similarly now for Flip-Flops :
 - If we can set limits so it doesn't go into a lot of optimization or longer duration. Ya with few Heuristics this can be done. Yes its possible.  
 
 
+## Tool
+My Master Thesis was on Duty Cycle Distorition for the Clock paths. The Rail to Rail Failure and Duty Cycle Distortion have explained in my report. As part of the feedback/fixes giving so based on the experiment carried out the following analysis was araised. As part of the simulation we used Infinisim. Link : https://infinisim.com/. The Infinisim also provides Webinars How the tool helps in detecting the R2R and DCD on CLock paths and Even they have Jitter analysis also. 
+
 ## Top Level Analysis (LEVEL 0 DEBUG)
 
 Level 0 : Debug Analysis.
@@ -86,7 +89,7 @@ Takeaway Points :
 - We can set a threshold like cell count to be 50 if something crossing we need to reduce or less increase. We can keep +/- 10% count varaition also.
 - The above can vary w.r.t to tech node, the Floorplan, Placement changes and stuff. 
 
-Timing Report : Example one Report like this asshown below 
+Timing Report : Example one Report like this as shown below. 
 
 Startpoint :
 Endpoint   : 
@@ -139,11 +142,10 @@ Based on the cell name present we can even segregate the cells based on the thre
 In way if we want to make it like reduce power then cahnge the type of the cell to HVT type. 
 
 HVT  :  High Threshold Voltage Cell    |   Less leakage.    |  High delay.
-NVT  :  Normal Threshold Voltage Cell  |   Normal.        |  Normal delay.
-LVT  :  Low Threshold Voltage Cell     |   More leakage.  |  Less delay.
+NVT  :  Normal Threshold Voltage Cell  |   Normal.          |  Normal delay.
+LVT  :  Low Threshold Voltage Cell     |   More leakage.    |  Less delay.
 
 **Takeaway Point** :
-
 - If the number of LVT are more we can check the no. of cells present in the path and count the LVT type of cells and say it maybe have more leakage power. If we want to reduce low leakage replace few of the cells with HVT cells and vice-versa.
 - If the path is having non-clock cells we need to reomve them and make everything to clk cells only. 
 
