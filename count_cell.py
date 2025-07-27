@@ -39,4 +39,12 @@ So, in way on top level we come to know the exact scenarios where which path we 
 We can go in specific path or report and do the changes like provoide the feedback and stuff. 
 This is just a Heuristic Algorithm.
 
+Go line by line parse the reports. 
+Starting of the Report will be having Startpoint then start to read the cells after the Endpoint like there will be Cell_path as indicator for starting. 
+
+The Logic is simple Dictonary Creation : 
+1. Key will the cell type and Value will be the Count of the cells. 
+2. Detect the end of the report and then put the collected cell count in the Excel file. 
+3. Then loops the same logic in all the Clock path reports. 
+
 '''
