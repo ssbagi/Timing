@@ -44,6 +44,10 @@ Similarly now for Flip-Flops :
 ## Tool : Infinisim 
 My Master Thesis was on Duty Cycle Distorition for the Clock paths. The Rail to Rail Failure and Duty Cycle Distortion have explained in my report. As part of the feedback/fixes giving so based on the experiment carried out the following analysis was araised. As part of the simulation we used Infinisim. Link : https://infinisim.com/. The Infinisim also provides Webinars How the tool helps in detecting the R2R and DCD on CLock paths and Even they have Jitter analysis and Aging of the transistors. 
 
+## Video : Clock Analysis at 7nm and below 
+Infinisim Link : https://infinisim.com/ 
+
+
 ## Top Level Analysis (LEVEL 0 DEBUG)
 
 Level 0 : Debug Analysis.
@@ -63,6 +67,23 @@ If the degradation is more in any path then add a buffer in between the inverter
 <img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/fd996f07-fab5-4969-8870-1b9dd4faa2c3" />
 
 ## Script 
+
+### Why ?
+The reason for this script is beecuase to give faster feedback to the PD team. So, in most of the times what happens is its same path we are simulating many times. Once the design enters into PD cycle its hardly any changes in RTL to Synthesis then again to PD cycle most of the time this is avoided here and there few corner scenarios are present. So, same set of paths like PLL to Source Clk path to Network Clk path then to CLk pin of all the Flip - Flop. In between there many clock dividers also and then clock domain crossing also. So, due to feedback given to PD team the placemnt of the cells or size of the cell or interaction of the cell may lead to R2R Violation or DCD Violation. Since, we are simulating same path multiple times hence, this script is usefull. Like a pattern or same paths. ANalyze some 1000 of timing reports. If you observe carefully the paths upto some level remain same. Consider this as root path. 
+
+At the point of diveregence, then the paths have distortion and stuff. So, hence this script will be usefull. We can have a basic heuristics like How many Inverter cells or Buffer cells or Clock gating cells (CGC) ?, Whether placed cells are of clk type or non clk type ?, What is the Vt of the cells ?, How many levels of cells are present in the path? these get to know since after analyzing few times or reading through the report we can get to know the flow of the clk in the SoC. So, hence we can have fair analysis based on the clk level that after this many levels we can expect this much distortion and stuff.  
+
+### Feedback given to PD Team 
+
+- Replace the number of Clk Buffers with Clk Inverters if you want to reduce area and not seeing much distortion. 1 Clk buffer = 2 Inverters Replace Even number of Buffers with Odd number of Inverter. Retain the same logic so replace 2 buffers with 1 inverter.
+  
+- If you observe a large change in the distortion then add Buffer. { INV - BUFFER - INV } This combination what will happen is assume first inverter had Ton = 48% the buffer will maintain the same duty cycle then INV then Ton = 52%. So there is distortion of 2% right so now inorder to bring it back you place the Inverter very close to the previous one. So, now the Ton = 49%. 1% improvement is seen and more over INV to INV the logic got changed then add one more inverter close to it so, now the Duty cycle became 50%.
+  
+- The Size of the cell also matters, Placement of the cell also matters and the routing of the cell in which Metal layer it is routed. This also matters.
+  - In general based on the Technology node we have several Metal layers. The 5nm tech node has 13 Metal layers. In general Few metal layers are fixed for clk paths, few metal layers are fixed for Signal routing and few metal layers are fixed for the Power Signals. So, when we have large delays we tend to give feedback to change the metal layer routing i.e., move it to next metal layer. As the Metal layer increases I mean M4 is routed signal now we move it to M6 so, now transition is faster and the delay is reduced, the time taken to charge or discharge cap is less. As we move the routing to higher metal layers the current flow increases and width of the metal layer is also large. Hence there is improvement in things. 
+  - Check the distance between the cells, I mean how much is the routing distance between the cells. Like is it 20um or 40um try to reduce this also. This can also been seen as a pattern for given sceanrio. 
+  - We know that T = RC right so each distance like assume 1um wirelength based on the tech node it provides 1ns delay {There is similar calculation like this}. Based on this we can give feedback to PD team for reducing the distance or upscalig the cells.
+ 
 
 The script is attached in this GitHub. The Method flow is simple :
 - STEP1 : Feed one Timing Report.
