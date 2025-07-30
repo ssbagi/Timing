@@ -73,6 +73,9 @@ The reason for this script is beecuase to give faster feedback to the PD team. S
 
 At the point of diveregence, then the paths have distortion and stuff. So, hence this script will be usefull. We can have a basic heuristics like How many Inverter cells or Buffer cells or Clock gating cells (CGC) ?, Whether placed cells are of clk type or non clk type ?, What is the Vt of the cells ?, How many levels of cells are present in the path? these get to know since after analyzing few times or reading through the report we can get to know the flow of the clk in the SoC. So, hence we can have fair analysis based on the clk level that after this many levels we can expect this much distortion and stuff.  
 
+The Infinisim tool is providing the level count in the clock path : 
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/f6f7c074-32b6-4d6a-ab07-91569302e0f2" />
+
 ### Feedback given to PD Team 
 
 - Replace the number of Clk Buffers with Clk Inverters if you want to reduce area and not seeing much distortion. 1 Clk buffer = 2 Inverters Replace Even number of Buffers with Odd number of Inverter. Retain the same logic so replace 2 buffers with 1 inverter.
