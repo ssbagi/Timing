@@ -1,0 +1,63 @@
+Startpoint: G2_datapath/g2/U1_SAEDRVT14_INV_S_2/out
+Endpoint:  G2_datapath/g2/U26_SAEDRVT14_INV_S_40/in
+Mode: func
+Corner: fast
+Scenario: func_fast
+Path Group: CLOCK
+Path Type: min
+
+Point						Incr		Path
+clock clock (rise edge)				0.00		0.00
+clock network delay (propagated)		1.05		1.05
+
+G2_datapath/g2/U1_SAEDRVT14_INV_S_2/IN    	0.00		1.05
+G2_datapath/g2/U1_SAEDRVT14_INV_S_2/OUT    	0.50		1.55
+G2_datapath/g2/U2_SAEDRVT14_INV_S_2/IN    	0.00		1.55
+G2_datapath/g2/U2_SAEDRVT14_INV_S_2/OUT    	0.50		2.05
+G2_datapath/g2/U3_SAEDRVT14_INV_S_2/IN    	0.00		2.05
+G2_datapath/g2/U3_SAEDRVT14_INV_S_2/OUT    	0.50		2.55
+G2_datapath/g2/U4_SAEDRVT14_INV_S_2/IN    	0.00		2.55
+G2_datapath/g2/U4_SAEDRVT14_INV_S_2/OUT    	0.50		3.05
+G2_datapath/g2/U5_SAEDRVT14_INV_S_2/IN    	0.00		3.05
+G2_datapath/g2/U5_SAEDRVT14_INV_S_2/OUT    	0.50		3.55
+G2_datapath/g2/U6_SAEDRVT14_BUFF_S_2/IN    	0.00		3.55
+G2_datapath/g2/U6_SAEDRVT14_BUFF_S_2/OUT    	0.50		4.05
+G2_datapath/g2/U7_SAEDRVT14_BUFF_S_4/IN    	0.00		4.05
+G2_datapath/g2/U7_SAEDRVT14_BUFF_S_4/OUT    	0.65		4.70
+G2_datapath/g2/U8_SAEDRVT14_BUFF_S_4/IN    	0.00		4.70
+G2_datapath/g2/U8_SAEDRVT14_BUFF_S_4/OUT    	0.65		5.35
+G2_datapath/g2/U9_SAEDRVT14_BUFF_S_4/IN    	0.00		5.35
+G2_datapath/g2/U9_SAEDRVT14_BUFF_S_4/OUT    	0.65		6.00
+G2_datapath/g2/U10_SAEDRVT14_BUFF_S_4/IN    	0.00		6.00
+G2_datapath/g2/U10_SAEDRVT14_BUFF_S_4/OUT    	0.65		6.65
+G2_datapath/g2/U11_SAEDRVT14_INV_S_10/IN    	0.00		6.65
+G2_datapath/g2/U11_SAEDRVT14_INV_S_10/OUT    	0.85		7.50
+G2_datapath/g2/U12_SAEDRVT14_INV_S_10/IN    	0.00		7.50
+G2_datapath/g2/U12_SAEDRVT14_INV_S_10/OUT    	0.85		8.35
+G2_datapath/g2/U13_SAEDRVT14_INV_S_10/IN    	0.00		8.35
+G2_datapath/g2/U13_SAEDRVT14_INV_S_10/OUT    	0.85		9.20
+G2_datapath/g2/U14_SAEDRVT14_INV_S_10/IN    	0.00		9.20
+G2_datapath/g2/U14_SAEDRVT14_INV_S_10/OUT    	0.85		10.05
+G2_datapath/g2/U15_SAEDRVT14_INV_S_10/IN    	0.00		10.05
+G2_datapath/g2/U15_SAEDRVT14_INV_S_10/OUT    	0.85		10.90
+G2_datapath/g2/U16_SAEDRVT14_INV_S_10/IN    	0.00		10.90
+G2_datapath/g2/U16_SAEDRVT14_INV_S_10/OUT    	0.85		11.75
+G2_datapath/g2/U17_SAEDRVT14_BUFF_S_20/IN    	0.00		11.75
+G2_datapath/g2/U17_SAEDRVT14_BUFF_S_20/OUT    	0.40		12.15
+G2_datapath/g2/U18_SAEDRVT14_BUFF_S_20/IN    	0.00		12.15
+G2_datapath/g2/U18_SAEDRVT14_BUFF_S_20/OUT    	0.40		12.55
+G2_datapath/g2/U19_SAEDRVT14_BUFF_S_20/IN    	0.00		12.55
+G2_datapath/g2/U19_SAEDRVT14_BUFF_S_20/OUT    	0.40		12.95
+G2_datapath/g2/U20_SAEDRVT14_BUFF_S_20/IN    	0.00		12.95
+G2_datapath/g2/U20_SAEDRVT14_BUFF_S_20/OUT    	0.40		13.35
+G2_datapath/g2/U21_SAEDRVT14_INV_S_20/IN    	0.00		13.35
+G2_datapath/g2/U21_SAEDRVT14_INV_S_20/OUT    	0.45		13.80
+G2_datapath/g2/U22_SAEDRVT14_INV_S_20/IN    	0.00		13.80
+G2_datapath/g2/U22_SAEDRVT14_INV_S_20/OUT    	0.45		14.25
+G2_datapath/g2/U23_SAEDRVT14_INV_S_20/IN    	0.00		14.25
+G2_datapath/g2/U23_SAEDRVT14_INV_S_20/OUT    	0.45		14.70
+G2_datapath/g2/U24_SAEDRVT14_INV_S_20/IN    	0.00		14.70
+G2_datapath/g2/U24_SAEDRVT14_INV_S_20/OUT    	0.45		15.15
+G2_datapath/g2/U25_SAEDRVT14_INV_S_20/IN    	0.00		15.15
+G2_datapath/g2/U25_SAEDRVT14_INV_S_20/OUT    	0.45		15.60
+G2_datapath/g2/U26_SAEDRVT14_INV_S_40/IN    	0.00		15.60
