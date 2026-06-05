@@ -173,6 +173,13 @@ In way if we want to make it like reduce power then cahnge the type of the cell 
 - If the number of LVT are more we can check the no. of cells present in the path and count the LVT type of cells and say it maybe have more leakage power. If we want to reduce low leakage replace few of the cells with HVT cells and vice-versa.
 - If the path is having non-clock cells we need to reomve them and make everything to clk cells only. 
 
+# Machine Learning : Reinforcement Learning (RL)
+
+The Real or Complex usage/application of ML in the Chip Development is shown in below image. There are many algorthims or problem solving things are included. Based on the Quality the confidence of the work or the ML algorithm increases on each iteration and stuff. This is amazing approach I am totally new to this kind of thing (TIMESTAMP : JUNE 5 2026) even git commit ID also has Timestamp. 
+
+<img width="1091" height="225" alt="image" src="https://github.com/user-attachments/assets/2ab4e437-2eb2-48aa-bacd-8eea62d60bdf" />
+
+
 # Conclusion 
 - A Heuristic Algorithm kind of Level 0 Debug Analysis. 
 - In way on top level we come to know the exact scenarios where which path we can optimize the paths. 
