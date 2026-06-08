@@ -184,6 +184,9 @@ The Real or Complex usage/application of ML in the Chip Development is shown in 
 <img width="1091" height="225" alt="image" src="https://github.com/user-attachments/assets/2ab4e437-2eb2-48aa-bacd-8eea62d60bdf" />
 
 
+<img width="1272" height="777" alt="image" src="https://github.com/user-attachments/assets/cbc0e84a-1b31-4b5c-9fb8-9120e79bc789" />
+
+
 # Conclusion 
 - A Heuristic Algorithm kind of Level 0 Debug Analysis. 
 - In way on top level we come to know the exact scenarios where which path we can optimize the paths. 
