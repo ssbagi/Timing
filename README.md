@@ -177,6 +177,10 @@ In way if we want to make it like reduce power then cahnge the type of the cell 
 
 The Real or Complex usage/application of ML in the Chip Development is shown in below image. There are many algorthims or problem solving things are included. Based on the Quality the confidence of the work or the ML algorithm increases on each iteration and stuff. This is amazing approach I am totally new to this kind of thing (TIMESTAMP : JUNE 5 2026) even git commit ID also has Timestamp. 
 
+<img width="1281" height="211" alt="image" src="https://github.com/user-attachments/assets/beebfd8a-1c42-4b60-b130-31a567fde184" />
+
+The below method is just kind of Regression and providing continous feedback for the improvements. 
+
 <img width="1091" height="225" alt="image" src="https://github.com/user-attachments/assets/2ab4e437-2eb2-48aa-bacd-8eea62d60bdf" />
 
 
