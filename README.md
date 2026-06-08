@@ -179,7 +179,7 @@ The Real or Complex usage/application of ML in the Chip Development is shown in 
 
 <img width="1281" height="211" alt="image" src="https://github.com/user-attachments/assets/beebfd8a-1c42-4b60-b130-31a567fde184" />
 
-The below method is just kind of Regression and providing continous feedback for the improvements. 
+**The below method is just kind of Regression and providing continous feedback for the improvements. How people working in Semiconductor domain know their work and what to do and what not to do.**
 
 <img width="1091" height="225" alt="image" src="https://github.com/user-attachments/assets/2ab4e437-2eb2-48aa-bacd-8eea62d60bdf" />
 
