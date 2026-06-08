@@ -186,6 +186,15 @@ The Real or Complex usage/application of ML in the Chip Development is shown in 
 
 <img width="1272" height="777" alt="image" src="https://github.com/user-attachments/assets/cbc0e84a-1b31-4b5c-9fb8-9120e79bc789" />
 
+# AI : #CHIP_MINTING_FACTORY
+The Tapeout Grade or BTO or MTO Grade level Chips from Architecture to Tapeout to Silicon Testing to Customer Shipping for each and Every Stage has to be captured in the Github repo and feed it to the Individual LLM and then **Create a Chip LLM for each project and then derivaed chip with next very reasonable improvments producing Chip Minting Factory(Multiple Chips on the Fly with defined structure and stuff) in Semiconductor Companies**. 
+
+<img width="1147" height="495" alt="image" src="https://github.com/user-attachments/assets/97726fb4-4d21-4d45-ad3f-8d8fe4c69f63" />
+
+
+<img width="1106" height="771" alt="image" src="https://github.com/user-attachments/assets/713c5ad8-b684-40db-a92f-fef49e778e52" />
+
+
 
 # Conclusion 
 - A Heuristic Algorithm kind of Level 0 Debug Analysis. 
